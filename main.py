@@ -11,9 +11,10 @@ if st.checkbox('音声出力'):
     # 音声構成を作成する
     # speech_config = speechsdk.SpeechConfig(subscription="<paste-your-speech-key-here>", region="<paste-your-speech-location/region-here>")
     speech_config = speechsdk.SpeechConfig(subscription="c3a2ff821eb348ce984330cf92b65561", region="japanwest")
-    # ソース言語を変更する
-    speech_config.speech_recognition_language="jp-JP"
-
+    # 合成言語と音声を選択する
+    speech_config.speech_synthesis_language = "ja-JP"
+    speech_config.speech_synthesis_voice_name ="ja-JP-NanamiNeural"
+    
     # 音声をファイルに合成する
     audio_config = AudioOutputConfig(filename="path/to/write/file.wav")
 
@@ -23,26 +24,5 @@ if st.checkbox('音声出力'):
     # ステータス文を追加
     st.write('音声ファイルはpath/to/writeフォルダに出力されました')
 
-
-# ファイルから認識する
-# def from_file():
-#     speech_config = speechsdk.SpeechConfig(subscription="<paste-your-speech-key-here>", region="<paste-your-speech-location/region-here>")
-#     audio_input = speechsdk.AudioConfig(filename="your_file_name.wav")
-#     speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_input)
-    
-#     result = speech_recognizer.recognize_once_async().get()
-#     print(result.text)
-
-# from_file()
-
-# if result.reason == speechsdk.ResultReason.RecognizedSpeech:
-#     print("Recognized: {}".format(result.text))
-# elif result.reason == speechsdk.ResultReason.NoMatch:
-#     print("No speech could be recognized: {}".format(result.no_match_details))
-# elif result.reason == speechsdk.ResultReason.Canceled:
-#     cancellation_details = result.cancellation_details
-#     print("Speech Recognition canceled: {}".format(cancellation_details.reason))
-#     if cancellation_details.reason == speechsdk.CancellationReason.Error:
-#         print("Error details: {}".format(cancellation_details.error_details))
 
 

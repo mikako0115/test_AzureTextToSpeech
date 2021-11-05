@@ -1,5 +1,4 @@
 import streamlit as st
-<<<<<<< HEAD
 import azure.cognitiveservices.speech as speechsdk
 from azure.cognitiveservices.speech import AudioDataStream, SpeechConfig, SpeechSynthesizer, SpeechSynthesisOutputFormat
 from azure.cognitiveservices.speech.audio import AudioOutputConfig
@@ -25,22 +24,6 @@ if st.checkbox('音声出力'):
     st.write('音声ファイルはpath/to/writeフォルダに出力されました')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ファイルから認識する
 # def from_file():
 #     speech_config = speechsdk.SpeechConfig(subscription="<paste-your-speech-key-here>", region="<paste-your-speech-location/region-here>")
@@ -62,29 +45,4 @@ if st.checkbox('音声出力'):
 #     if cancellation_details.reason == speechsdk.CancellationReason.Error:
 #         print("Error details: {}".format(cancellation_details.error_details))
 
-=======
-import time
 
-st.title('Streamlit 超入門')
-st.write('プレグレスバーの表示')
-'Start!!'
-
-latest_iteration = st.empty()
-bar = st.progress(0)
-
-for i in range(100):
-    latest_iteration.text(f'Iteration {i+1}')
-    bar.progress(i + 1)
-    time.sleep(0.03)
-
-'Done!!'
-
-left_column, right_column =st.columns(2)
-
-button = left_column.button('右カラムに文字を表示')
-if button:
-    right_column.write('ここは右カラム')
-
-expander = st.expander('問い合わせ')
-expander.write('問い合わせ内容を書く')
->>>>>>> origin/master

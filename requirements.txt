@@ -1,11 +1,2 @@
-<<<<<<< HEAD
 streamlit==0.88.0
-azure.cognitiveservices.speech
-AudioDataStream
-SpeechConfig
-SpeechSynthesizer
-SpeechSynthesisOutputFormat
-AudioOutputConfig
-=======
-streamlit==0.88.0
->>>>>>> origin/master
+
